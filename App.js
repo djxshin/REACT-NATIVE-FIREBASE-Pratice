@@ -91,20 +91,23 @@ signUserOut= () => {
             { this.state.emailloginView == true ? (
             <View>
                 <Text>E-Mail</Text>
-                <TextInput/>
+               
                 <TextInput
                 onChangeText={(text) => this.setState({email: text})}
                 value = {this.state.email}
                 /> 
                 <Text>Password</Text>
-                <TextInput/>
+               
                 <TextInput
                 onChangeText={(text) => this.setState({pass: text})}
                 secureTextEntry={true}
                 value = {this.state.pass}
                 /> 
-              </View>
-            ) : ''}
+            </View>
+            ) : <View>
+              <Text>=The Bridge it out!!!! - Arold- </Text>
+            </View>
+            }
 
             <TouchableHighlight 
             onPress={()=> this.setState({emailloginView: true})}
