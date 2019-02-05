@@ -29,7 +29,7 @@ export default class App extends React.Component {
   loginUser = async(email, pass) => {
     if(email != '' && pass != ''){
       try{
-        let user = await auth.signInWithAndPassword(email, pass);
+        let user = await auth.signInWithEmailAndPassword(email, pass);
         console.log(user);
       } catch(error){
          console.log(error);
@@ -83,7 +83,7 @@ signUserOut= () => {
             <TouchableHighlight onPress={() => this.signUserOut() } style={{ backgroundColor:'red'}}>
             <Text>Log out</Text>
             </TouchableHighlight>
-            <Text>Logged in...</Text>
+            <Text>Logged in man!!!...</Text>
           </View>
         ) : (
           <View>
@@ -103,6 +103,11 @@ signUserOut= () => {
                 secureTextEntry={true}
                 value = {this.state.pass}
                 /> 
+
+                 <TouchableHighlight onPress={() => this.loginUser(this.state.email, this.state.pass) } style={{ backgroundColor:'red'}}>
+                <Text>Log in Here, stupid!</Text>
+                </TouchableHighlight>
+
             </View>
             ) : <View>
               <Text>=The Bridge it out!!!! - Arold- </Text>
