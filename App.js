@@ -11,19 +11,21 @@ export default class App extends React.Component {
     // this.registerUser('fakemail@hotmail.com', 'fakepassword');
     var that = this;
 
-    f.auth().onAuthStateChanged(function(user){
+    var handleAuth = function(user){
       if(user){
-        that.setState({
+        this.setState({
           loggedin: true
         });
         console.log('logged in foo!', user)
       }else{
-        that.setState({
+        this.setState({
           loggedin: false
         })
         console.log('logged out foo!')
       }
-    });
+    }.bind(this);
+    
+    f.auth().onAuthStateChanged(handleAuth);
   }
 
   loginUser = async(email, pass) => {
@@ -144,5 +146,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-  
