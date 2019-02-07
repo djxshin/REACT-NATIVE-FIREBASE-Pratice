@@ -146,3 +146,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+// ********************** Set Data **********************
+// database.ref('/refName/childRef2').set("value")
+
+
+// // ********************** Update Data **********************
+// var updates = {};
+// updates['/ref/childRef'] = 'Database';
+// updates['/anotherRefName'] = 'another value';
+// updates['/numbers'] = '5';
+// database.ref().update(updates);
+
+
+// // ********************** Delete Data **********************
+
+database.ref('/numbers').remove();
